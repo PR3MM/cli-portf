@@ -1,0 +1,153 @@
+@import "tailwindcss";
+
+/* Neon Linux-style dark theme variables */
+:root.theme-dark {
+  --bg: #000000;
+  --panel: rgba(0, 10, 0, 0.6);
+  --text: #00ff41; /* bright neon green text */
+  --muted: #4bff8a; /* softer neon for secondary text */
+  --neon-green: #00ff41;
+  --neon-green-rgb: 0,255,65;
+  --neon-purple: #9b5cff;
+  --neon-purple-rgb: 155,92,255;
+  --neon-magenta: #ff00ff;
+}
+
+/* Apply base background & text when theme class is present on root */
+:root.theme-dark, :root.theme-dark body, :root.theme-dark #root {
+  background-color: var(--bg) !important;
+  color: var(--text) !important;
+}
+
+/* Map common Tailwind utility usages in the app to neon palette */
+:root.theme-dark [class*="bg-slate"] {
+  background-color: var(--panel) !important;
+}
+
+:root.theme-dark [class*="text-lime"],
+:root.theme-dark [class*="text-green"] {
+  color: var(--neon-green) !important;
+}
+
+:root.theme-dark [class*="text-purple"],
+:root.theme-dark [class*="text-sky"],
+:root.theme-dark [class*="text-teal"] {
+  color: var(--neon-purple) !important;
+}
+
+:root.theme-dark [class*="text-gray"],
+:root.theme-dark [class*="text-zinc"],
+:root.theme-dark [class*="text-neutral"] {
+  color: rgba(var(--neon-green-rgb), 0.85) !important;
+}
+
+:root.theme-dark [class*="border-lime"],
+:root.theme-dark [class*="border-green"],
+:root.theme-dark [class*="border-purple"] {
+  border-color: rgba(var(--neon-purple-rgb), 0.35) !important;
+}
+
+:root.theme-dark [class*="bg-lime"],
+:root.theme-dark [class*="bg-green"],
+:root.theme-dark [class*="bg-purple"],
+:root.theme-dark [class*="bg-slate-900"] {
+  background-color: rgba(var(--neon-purple-rgb), 0.08) !important;
+}
+
+/* Hover states */
+:root.theme-dark [class*="hover:bg-lime"],
+:root.theme-dark [class*="hover:text-lime"] {
+  --tw-bg-opacity: 1;
+  color: var(--neon-green) !important;
+  background-color: rgba(var(--neon-green-rgb), 0.18) !important;
+}
+
+/* Scrollbar and selection tuned to neon */
+:root.theme-dark .scrollbar-thin::-webkit-scrollbar-thumb {
+  background: var(--neon-green) !important;
+}
+
+:root.theme-dark ::selection {
+  background-color: rgba(var(--neon-green-rgb), 0.12);
+  color: var(--neon-green);
+}
+
+:root.theme-dark input::caret {
+  color: var(--neon-green) !important;
+}
+
+/* Remove borders and strong outlines when dark theme is active */
+:root.theme-dark [class*="border"] {
+  border: none !important;
+  box-shadow: none !important;
+}
+
+/* Specific catch for border-left/right/top/bottom utilities */
+:root.theme-dark [class*="border-l"],
+:root.theme-dark [class*="border-r"],
+:root.theme-dark [class*="border-t"],
+:root.theme-dark [class*="border-b"] {
+  border: none !important;
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulse-glow {
+  0%, 100% {
+    opacity: 0.2;
+  }
+  50% {
+    opacity: 0.4;
+  }
+}
+
+.animate-fade-in {
+  animation: fade-in 0.3s ease-out;
+}
+
+.animate-pulse {
+  animation: pulse-glow 4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+/* Custom scrollbar */
+.scrollbar-thin::-webkit-scrollbar {
+  width: 6px;
+}
+
+.scrollbar-thin::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.scrollbar-thin::-webkit-scrollbar-thumb {
+  background: rgb(132, 204, 22);
+  border-radius: 3px;
+}
+
+.scrollbar-thin::-webkit-scrollbar-thumb:hover {
+  background: rgb(190, 214, 0);
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Selection styling */
+::selection {
+  background-color: rgb(132, 204, 22, 0.3);
+  color: rgb(132, 204, 22);
+}
+
+/* Input caret color */
+input::caret {
+  color: rgb(132, 204, 22);
+}
