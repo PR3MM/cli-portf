@@ -187,7 +187,7 @@ export default function CLI() {
   // COMMANDS
   const runLs = () => {
     const node = getNodeFromPath(currentDir);
-    console.log(node)
+
 
     if (!node || node.type !== "dir") {
       return ["Not a directory"];
