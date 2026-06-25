@@ -360,7 +360,7 @@ export default function CLI() {
                 <span className="w-3 h-3 rounded-full bg-green-400 shadow-lg shadow-green-400/80" />
                 <h3 className="ml-3 text-lime-400 font-bold text-lg tracking-tight drop-shadow-lg">CLI Portfolio</h3>
               </div>
-              <div className="text-purple-300 text-xs font-medium tracking-wider drop-shadow-lg underline "><a href="https://premveddhote.me/"> premveddhote </a> </div>
+              <div className="text-purple-300 text-xs font-medium tracking-wider drop-shadow-lg underline "><a href="https://premveddhote.dev/"> premveddhote </a> </div>
             </div>
 
             {/* Banner */}
